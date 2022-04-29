@@ -1,0 +1,204 @@
+﻿@model WebApplication2.Models.Account
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div class="card">
+            <div class="card-body">
+                <div class="m-sm-3">
+                    <div class="row">
+                            <div class="col-xl">
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">Basic Layout</h5>
+                                        <small class="text-muted float-end">Default label</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-default-fullname">Full Name</label>
+                                                <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-default-company">Company</label>
+                                                <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc.">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-default-email">Email</label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="text" id="basic-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-default-email2">
+                                                    <span class="input-group-text" id="basic-default-email2">example.com</span>
+                                                </div>
+                                                <div class="form-text">You can use letters, numbers &amp; periods</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-default-phone">Phone No</label>
+                                                <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="658 799 8941">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-default-message">Message</label>
+                                                <textarea id="basic-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Send</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl">
+                                <div class="card mb-4">
+                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0">Basic with Icons</h5>
+                                        <small class="text-muted float-end">Merged input group</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-icon-default-fullname">Full Name</label>
+                                                <div class="input-group input-group-merge">
+                                                    <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user"></i></span>
+                                                    <input type="text" class="form-control" id="basic-icon-default-fullname" placeholder="John Doe" aria-label="John Doe" aria-describedby="basic-icon-default-fullname2">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-icon-default-company">Company</label>
+                                                <div class="input-group input-group-merge">
+                                                    <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-buildings"></i></span>
+                                                    <input type="text" id="basic-icon-default-company" class="form-control" placeholder="ACME Inc." aria-label="ACME Inc." aria-describedby="basic-icon-default-company2">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-icon-default-email">Email</label>
+                                                <div class="input-group input-group-merge">
+                                                    <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                                                    <input type="text" id="basic-icon-default-email" class="form-control" placeholder="john.doe" aria-label="john.doe" aria-describedby="basic-icon-default-email2">
+                                                    <span id="basic-icon-default-email2" class="input-group-text">example.com</span>
+                                                </div>
+                                                <div class="form-text">You can use letters, numbers &amp; periods</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-icon-default-phone">Phone No</label>
+                                                <div class="input-group input-group-merge">
+                                                    <span id="basic-icon-default-phone2" class="input-group-text"><i class="bx bx-phone"></i></span>
+                                                    <input type="text" id="basic-icon-default-phone" class="form-control phone-mask" placeholder="658 799 8941" aria-label="658 799 8941" aria-describedby="basic-icon-default-phone2">
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="basic-icon-default-message">Message</label>
+                                                <div class="input-group input-group-merge">
+                                                    <span id="basic-icon-default-message2" class="input-group-text"><i class="bx bx-comment"></i></span>
+                                                    <textarea id="basic-icon-default-message" class="form-control" placeholder="Hi, Do you have a moment to talk Joe?" aria-label="Hi, Do you have a moment to talk Joe?" aria-describedby="basic-icon-default-message2"></textarea>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Send</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                            </div>
+                        </div>
+                        @*<h4>Account</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DisabledAt, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DisabledAt, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DisabledAt, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Thumbnail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Thumbnail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Thumbnail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RoleNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.RoleNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RoleNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmployeeNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmployeeNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AddmissionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AddmissionDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AddmissionDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfJoining, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateOfJoining, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateOfJoining, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
